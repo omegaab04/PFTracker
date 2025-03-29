@@ -1,2 +1,18 @@
-.DS_Store
-.DS_Store
+# Debug symbol files
+*.dSYM/
+*.so
+*.dylib
+*.dll
+*.pyd
+*.o
+*.obj
+*.a
+*.lib
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
