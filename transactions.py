@@ -38,3 +38,21 @@ def view_transactions():
         for row in rows[1:]:
             date, desc, amount, category = row
             print(f"{date:<12} {desc:<25} {amount:>10} {category:<15}")
+            
+def show_summary():
+    income, expense = 0, 0
+    ensure_file_exists()
+    with open(DATA_FILE, newline='') as f:
+        reader = csv.reader(f)
+        next(reader)  # skip header
+        for row in reader:
+            amount = float(row[2])
+            if amount > 0:
+                income += amount
+            else:
+                expense += amount
+
+    print("\n=== Summary ===")
+    print(f"Total Income:  £{income:.2f}")
+    print(f"Total Expense: £{abs(expense):.2f}")
+    print(f"Net Balance:   £{income + expense:.2f}")
