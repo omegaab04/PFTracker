@@ -28,5 +28,13 @@ def view_transactions():
     ensure_file_exists()
     with open(DATA_FILE, newline='') as f:
         reader = csv.reader(f)
-        for row in reader:
-            print("\t".join(row))
+        rows = list(reader)
+        if len(rows) <= 1:
+            print("No transactions yet.")
+            return
+
+        print(f"{'Date':<12} {'Description':<25} {'Amount':>10} {'Category':<15}")
+        print("-" * 65)
+        for row in rows[1:]:
+            date, desc, amount, category = row
+            print(f"{date:<12} {desc:<25} {amount:>10} {category:<15}")
