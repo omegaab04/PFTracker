@@ -15,3 +15,8 @@ pip install colorama
 ```bash
 python3 PFTracker.py
 ```
+# Or
+```bash
+python PFTracker.py
+```
+
