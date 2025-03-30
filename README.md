@@ -3,10 +3,15 @@ This project launches a CLI menu that lets users add a new transaction, view all
 Open it up and play around with it.
 
 ```
-git clone <https://github.com/omegaab04/PFTracker/edit/main/README.md>
+git clone <https://github.com/omegaab04/PFTracker>
 cd PFTracker
 ```
 # Dependencies
 ```
 pip install colorama
+```
+
+# To run
+``bash
+python3 PFTracker.py
 ```
